@@ -1,1 +1,79 @@
 
+XML
+
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <TableLayout>
+       <TableRow>
+           <TextView
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent"
+               android:text="LOGIN PAGE"
+               android:textSize="28dp"
+               android:textColor="#AE8302"
+             android:layout_marginStart="100dp"
+               android:layout_marginTop="80dp"
+               android:padding="15dp"
+               android:textStyle="bold"/>
+       </TableRow>
+   </TableLayout>
+
+    <TableLayout>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="USERNAME"
+                android:textSize="20dp"
+                android:textColor="#D30148"
+                android:padding="14dp"/>
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:textSize="20dp"
+                android:padding="14dp"
+                android:hint="username"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="PASSWORD"
+                android:textSize="20dp"
+                android:textColor="#D30148"
+                android:padding="14dp"/>
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="textPassword"
+                android:textSize="20dp"
+                android:padding="14dp"
+                android:hint="password"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout>
+        <TableRow>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textSize="20dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="100dp"/>
+        </TableRow>
+    </TableLayout>
+
+
+
+</TableLayout>
