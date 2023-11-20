@@ -1,0 +1,98 @@
+XML  1---
+   <EditText
+        android:id="@+id/usrnm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="USERNAME"
+        android:padding="14dp"/>
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        android:padding="14dp"/>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="9dp"
+       android:layout_marginTop="60dp"
+        android:text="Button click"
+        android:textSize="20dp"
+        />
+
+</LinearLayout>
+
+JAVA   1----
+public class MainActivity extends AppCompatActivity {
+    Button clk;
+
+    EditText username;
+    EditText password;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        clk = findViewById(R.id.btn1);
+        username = findViewById(R.id.usrnm);
+        password = findViewById(R.id.pwd);
+        clk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                intent.putExtra("keyname", username.getText().toString());
+                intent.putExtra("keypwd", password.getText().toString());
+                startActivity(intent);
+
+            }
+        });
+
+    }
+}
+
+XML     2--
+<TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textSize="18dp"
+        />
+
+        JAVA   2----
+
+        public class MainActivity2 extends AppCompatActivity {
+    TextView textView1;
+    TextView textView2;
+
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        textView1=findViewById(R.id.txt1);
+        textView2=findViewById(R.id.txt2);
+        textView1.setText(getIntent().getStringExtra("keyname"));
+        textView2.setText(getIntent().getStringExtra("keypwd"));
+
+
+    }
+}
