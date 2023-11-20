@@ -1,0 +1,21 @@
+XML 
+ <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="150dp"
+        android:text="GOOGLE LINK"
+        android:textSize="20dp"/>
+
+        JAVA
+
+         Button button=findViewById(R.id.btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.google.com"));
+                startActivity(intent);
+            }
+        });
